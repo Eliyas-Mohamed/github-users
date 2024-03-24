@@ -38,7 +38,7 @@ export default function UserList() {
             <Box
               sx={{
                 display: 'flex',
-                marginBottom: '10 px',
+                marginBottom: '15px',
                 alignItems: 'center',
               }}
             >

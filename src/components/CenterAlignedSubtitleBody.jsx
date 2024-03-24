@@ -1,5 +1,5 @@
 import { Skeleton, Typography, Box } from '@mui/material';
-const CenterAlignedSubtitleBody = ({ loading, title, subtitle }) => {
+const CenterAlignedSubtitleBody = ({ loading, title, body }) => {
   if (loading) {
     return (
       <Box
@@ -31,7 +31,7 @@ const CenterAlignedSubtitleBody = ({ loading, title, subtitle }) => {
     return (
       <>
         <Typography variant="subtitle1">{title}</Typography>
-        <Typography variant="body1">{subtitle}</Typography>
+        <Typography variant="body1">{body}</Typography>
       </>
     );
   }

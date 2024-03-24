@@ -1,8 +1,9 @@
 import { Typography, Link, Box, Skeleton } from '@mui/material';
+const linkCoverTextStyle = { display: 'flex', alignItems: 'center' };
 const LinkIconText = ({ href, text, icon, loading }) => {
   if (loading) {
     return (
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={linkCoverTextStyle}>
         <Skeleton
           variant="circular"
           className="darker"
@@ -21,7 +22,7 @@ const LinkIconText = ({ href, text, icon, loading }) => {
   }
   if (Boolean(href)) {
     return (
-      <Link href={href} sx={{ display: 'flex', alignItems: 'center' }}>
+      <Link href={href} sx={linkCoverTextStyle}>
         {icon}
         <Typography variant="body1" component={'span'} gutterBottom>
           {text}
@@ -30,7 +31,7 @@ const LinkIconText = ({ href, text, icon, loading }) => {
     );
   } else if (Boolean(text)) {
     return (
-      <Box component={'div'} sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box component={'div'} sx={linkCoverTextStyle}>
         {icon}
         <Typography variant="body1" component={'span'} gutterBottom>
           {text}
@@ -39,7 +40,7 @@ const LinkIconText = ({ href, text, icon, loading }) => {
     );
   } else {
     return (
-      <Box component={'div'} sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box component={'div'} sx={{ ...linkCoverTextStyle, opacity: 0.5 }}>
         {icon}
         <Typography variant="body1" component={'span'} gutterBottom>
           Not Available
