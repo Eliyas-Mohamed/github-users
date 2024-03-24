@@ -11,7 +11,11 @@ const UserDetail = () => {
   let { userName } = useParams();
   useEffect(() => {
     if (Boolean(userName)) {
-      fetch(`https://api.github.com/users/${userName}`)
+      fetch(`https://api.github.com/users/${userName}`, {
+        headers: new Headers({
+          Authorization: process.env.REACT_APP_GITHUBAPIKEY,
+        }),
+      })
         .then((res) => res.json())
         .then(
           ({

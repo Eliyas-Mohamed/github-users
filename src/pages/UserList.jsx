@@ -10,7 +10,11 @@ import { Link } from 'react-router-dom';
 export default function UserList() {
   const [userList, setUsersList] = useState([]);
   useEffect(() => {
-    fetch('https://api.github.com/users')
+    fetch('https://api.github.com/users', {
+      headers: new Headers({
+        Authorization: process.env.REACT_APP_GITHUBAPIKEY,
+      }),
+    })
       .then((res) => res.json())
       .then((data) => {
         setUsersList(data);
